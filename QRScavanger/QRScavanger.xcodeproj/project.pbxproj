@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75756213B4A3104BBD87F0A /* Pods_QRScavanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */; };
 		ECE9D90520FD36E3007DBB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */; };
 		ECE9D90720FD36E3007DBB44 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */; };
 		ECE9D90920FD36E3007DBB44 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46BF30EF05DE2BFA1D3FCE9D /* Pods-QRScavanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.debug.xcconfig"; sourceTree = "<group>"; };
+		98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.release.xcconfig"; sourceTree = "<group>"; };
+		DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRScavanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE9D90120FD36E3007DBB44 /* QRScavanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScavanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75756213B4A3104BBD87F0A /* Pods_QRScavanger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51A91FC030EC1FC9D58B6021 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46BF30EF05DE2BFA1D3FCE9D /* Pods-QRScavanger.debug.xcconfig */,
+				98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE034A428AF94F6ABE849FF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ECE9D8F820FD36E3007DBB44 = {
 			isa = PBXGroup;
 			children = (
 				ECE9D90320FD36E3007DBB44 /* QRScavanger */,
 				ECE9D90220FD36E3007DBB44 /* Products */,
+				51A91FC030EC1FC9D58B6021 /* Pods */,
+				CE034A428AF94F6ABE849FF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECE9D91520FD36E6007DBB44 /* Build configuration list for PBXNativeTarget "QRScavanger" */;
 			buildPhases = (
+				FE35D276A1D0E2327DED9C2A /* [CP] Check Pods Manifest.lock */,
 				ECE9D8FD20FD36E3007DBB44 /* Sources */,
 				ECE9D8FE20FD36E3007DBB44 /* Frameworks */,
 				ECE9D8FF20FD36E3007DBB44 /* Resources */,
+				1DBC020B2D4CC3C444D1746E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DBC020B2D4CC3C444D1746E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE35D276A1D0E2327DED9C2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRScavanger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ECE9D8FD20FD36E3007DBB44 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		ECE9D91620FD36E6007DBB44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46BF30EF05DE2BFA1D3FCE9D /* Pods-QRScavanger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		ECE9D91720FD36E6007DBB44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
