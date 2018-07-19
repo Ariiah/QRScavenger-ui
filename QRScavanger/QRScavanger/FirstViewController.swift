@@ -12,7 +12,7 @@ import ARKit
 
 class FirstViewController: UIViewController, ARSCNViewDelegate {
     
-//    @IBOutlet var sceneView: ARSCNView!
+    //    @IBOutlet var sceneView: ARSCNView!
     
     
     @IBOutlet weak var sceneView: ARSCNView!
@@ -23,37 +23,19 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        //        let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
+//        let material = SCNMaterial()
         
-        let sphere = SCNSphere(radius: 0.2)
-        
-        let material = SCNMaterial()
-        
-        //        material.diffuse.contents = UIImage(named: "art.scnassets/*img file*")
-        
-        sphere.materials = [material]
-        
-        let node = SCNNode()
-        
-        // z index - negative means farther away from you
-        node.position = SCNVector3(x: 0, y: 0.1, z: -0.5)
-        
-        node.geometry = sphere
-        
-        sceneView.scene.rootNode.addChildNode(node)
+//        material.diffuse.contents = UIImage(named: "art.scnassets/note_pad_large.scn")
         
         // gives it light and shadows to appear 3D
         
-        sceneView.autoenablesDefaultLighting = true
+//        sceneView.autoenablesDefaultLighting = true
         
-        // Show statistics such as fps and timing information
-        //        sceneView.showsStatistics = true
+        // Create a new scene
+        let scene = SCNScene(named: "art.scnassets/Note pad final.scn")!
         
-        //        // Create a new scene
-        //        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        //
-        //        // Set the scene to the view
-        //        sceneView.scene = scene
+        // Set the scene to the view
+        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
