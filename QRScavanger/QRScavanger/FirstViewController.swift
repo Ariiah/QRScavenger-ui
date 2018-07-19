@@ -9,12 +9,44 @@
 import UIKit
 import SceneKit
 import ARKit
-//import Alamofire
-//import SwiftyJSON
+import Alamofire
+import SwiftyJSON
 
 class FirstViewController: UIViewController, ARSCNViewDelegate {
     
+    // Constants
+    let API = "https://qr-scavenger.herokuapp.com/"
+
+    
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    func getData(url: String) {
+        
+        Alamofire.request(API).responseJSON { response in
+            if response.result.isSuccess {
+                
+                let data : JSON = JSON(response.result.value!)
+                self.showData(json: data)
+                print(data)
+            }
+        }
+    }
+    
+    func showData(json: JSON) {
+        var text = ""
+        for (_,subJson):(String, JSON) in json {
+            if text.isEmpty {
+                text = subJson["hint"].string!
+            } else {
+                text += "\n\n\(subJson["hint"])"
+            }
+        }
+    }
+    
+    // extract text needed
+    
+    //
+    
     
     // Show text
     func displayText() {
@@ -48,6 +80,9 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
         
         // Render text on screen
         displayText()
+        
+        
+        getData(url: API)
         
     }
     
