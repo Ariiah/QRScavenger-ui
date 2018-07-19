@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E75756213B4A3104BBD87F0A /* Pods_QRScavanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */; };
+		EC1FB87C20FFABDF00B9ECEA /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCD78C520FFA7E1002748C5 /* Assests.xcassets */; };
 		ECE9D90520FD36E3007DBB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */; };
 		ECE9D90720FD36E3007DBB44 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */; };
 		ECE9D90920FD36E3007DBB44 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */; };
 		ECE9D90C20FD36E3007DBB44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE9D90A20FD36E3007DBB44 /* Main.storyboard */; };
-		ECE9D90E20FD36E6007DBB44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE9D90D20FD36E6007DBB44 /* Assets.xcassets */; };
 		ECE9D91120FD36E6007DBB44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE9D90F20FD36E6007DBB44 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +20,12 @@
 		46BF30EF05DE2BFA1D3FCE9D /* Pods-QRScavanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.debug.xcconfig"; sourceTree = "<group>"; };
 		98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.release.xcconfig"; sourceTree = "<group>"; };
 		DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRScavanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECCD78C520FFA7E1002748C5 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assests.xcassets; path = "/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets"; sourceTree = "<absolute>"; };
 		ECE9D90120FD36E3007DBB44 /* QRScavanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScavanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		ECE9D90B20FD36E3007DBB44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ECE9D90D20FD36E6007DBB44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECE9D91020FD36E6007DBB44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECE9D91220FD36E6007DBB44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,11 +80,11 @@
 		ECE9D90320FD36E3007DBB44 /* QRScavanger */ = {
 			isa = PBXGroup;
 			children = (
+				ECCD78C520FFA7E1002748C5 /* Assests.xcassets */,
 				ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */,
 				ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */,
 				ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */,
 				ECE9D90A20FD36E3007DBB44 /* Main.storyboard */,
-				ECE9D90D20FD36E6007DBB44 /* Assets.xcassets */,
 				ECE9D90F20FD36E6007DBB44 /* LaunchScreen.storyboard */,
 				ECE9D91220FD36E6007DBB44 /* Info.plist */,
 			);
@@ -152,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE9D91120FD36E6007DBB44 /* LaunchScreen.storyboard in Resources */,
-				ECE9D90E20FD36E6007DBB44 /* Assets.xcassets in Resources */,
 				ECE9D90C20FD36E3007DBB44 /* Main.storyboard in Resources */,
+				EC1FB87C20FFABDF00B9ECEA /* Assests.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,12 +168,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
