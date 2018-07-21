@@ -13,17 +13,17 @@ import BEMCheckBox
 
 
 class SecondViewController: UIViewController {
-
+    
     
     // Constants
     let API = "https://qr-scavenger.herokuapp.com/"
-
+    
     // Outlets
     @IBOutlet weak var one: BEMCheckBox!
-
-    @IBOutlet weak var two: BEMCheckBox!
     
-    @IBOutlet weak var three: BEMCheckBox!
+//    @IBOutlet weak var two: BEMCheckBox!
+//
+//    @IBOutlet weak var three: BEMCheckBox!
     
     @IBOutlet weak var compTextView: UITextView!
     
@@ -41,6 +41,7 @@ class SecondViewController: UIViewController {
         }
     }
     
+    
     // Show JSON data
     func showData (json: JSON) {
         
@@ -49,15 +50,17 @@ class SecondViewController: UIViewController {
             if text.isEmpty {
                 text = subJson["name"].string!
             } else {
-                text += "\n\n\(subJson["name"])"
+                text += "\n\n\(numberCheckBoxes = [one])\t\(subJson["name"])"
+//                print(type(of:numberCheckBoxes))
+
             }
         }
         compTextView.text = text
         
         let myString = text
-//        let style = NSMutableParagraphStyle()
-//        style.lineSpacing = 0
-//        let paragraph = [NSAttributedStringKey.paragraphStyle : style]
+        //        let style = NSMutableParagraphStyle()
+        //        style.lineSpacing = 0
+        //        let paragraph = [NSAttributedStringKey.paragraphStyle : style]
         let myAttribute = [ NSAttributedStringKey.font: UIFont(name: "Arial", size: 22.0)! ]
         
         let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
@@ -71,8 +74,8 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData(url: API)
-        numberCheckBoxes = [one, two, three]
-
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

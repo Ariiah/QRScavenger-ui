@@ -22,6 +22,7 @@
 		98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.release.xcconfig"; sourceTree = "<group>"; };
 		DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRScavanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC01AC3E2100F93100E82DD6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		EC01AC402101915500E82DD6 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assests.xcassets; path = "/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets"; sourceTree = "<absolute>"; };
 		ECCD78C520FFA7E1002748C5 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assests.xcassets; path = "/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets"; sourceTree = "<absolute>"; };
 		ECE9D90120FD36E3007DBB44 /* QRScavanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScavanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		ECE9D90320FD36E3007DBB44 /* QRScavanger */ = {
 			isa = PBXGroup;
 			children = (
+				EC01AC402101915500E82DD6 /* Assests.xcassets */,
 				EC01AC3E2100F93100E82DD6 /* art.scnassets */,
 				ECCD78C520FFA7E1002748C5 /* Assests.xcassets */,
 				ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */,
@@ -360,15 +362,17 @@
 			baseConfigurationReference = 46BF30EF05DE2BFA1D3FCE9D /* Pods-QRScavanger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CT4YB372GX;
+				DEVELOPMENT_TEAM = VPVWT3YTM5;
 				INFOPLIST_FILE = QRScavanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellylockwood.QRScavanger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kellyclockwood.QRScavanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,15 +383,17 @@
 			baseConfigurationReference = 98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CT4YB372GX;
+				DEVELOPMENT_TEAM = VPVWT3YTM5;
 				INFOPLIST_FILE = QRScavanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kellylockwood.QRScavanger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kellyclockwood.QRScavanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
