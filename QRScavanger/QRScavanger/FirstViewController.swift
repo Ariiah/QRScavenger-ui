@@ -15,58 +15,56 @@ import SwiftyJSON
 class FirstViewController: UIViewController, ARSCNViewDelegate {
     
     // Constants
-    //    let API = "https://qr-scavenger.herokuapp.com/"
+    let API = "https://qr-scavenger.herokuapp.com/"
     
     // AR outlet
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    // GET JSON data
+    func getData(url: String) {
+        
+        Alamofire.request(API).responseJSON { response in
+            if response.result.isSuccess {
+                
+                let data : JSON = JSON(response.result.value!)
+                print(data)
+                //                print("get: \(type(of:data))")
+                self.showData(json: data)
+            }
+        }
+    }
+    
+    // Show JSON data
+    var text = ""
+    func showData(json: JSON) {
+        for (_,subJson):(String, JSON) in json {
+            if text.isEmpty {
+                text = subJson["hint"].string!
+            } else {
+                text += "\n\n\(subJson["hint"])"
+            }
+        }
+        //            print(text)
+        //        print("show: \(type(of:text))")
+    }
+    
+    // Show text
+    //        func displayText() {
+    //            //        let data = text
+    //            let textGeo = SCNText(string: "placeholder text", extrusionDepth: 1.0)
     //
-    //    @IBOutlet weak var placeholder: UILabel!
+    //            textGeo.firstMaterial?.diffuse.contents = UIColor.black
+    //            textGeo.font = UIFont(name: "Arial", size: 4)
     //
-    //    // GET JSON data
-    //    func getData(url: String) {
+    //            let textNode = SCNNode(geometry: textGeo)
+    //            textNode.position = SCNVector3(-0.05,0.15,0.29)
+    //            textNode.scale = SCNVector3(0.002,0.002,0.002)
     //
-    //        Alamofire.request(API).responseJSON { response in
-    //            if response.result.isSuccess {
+    //            self.sceneView.scene.rootNode.addChildNode(textNode)
     //
-    //                let data : JSON = JSON(response.result.value!)
-    //                print(data)
-    //                //                print("get: \(type(of:data))")
-    //                self.showData(json: data)
-    //            }
+    //            //        let action = SCNAction.fadeOpacity(by: -1, duration: 5.0)
+    //            //        textNode.runAction(action)
     //        }
-    //    }
-    //
-    //    // Show JSON data
-    //    var text = ""
-    //    func showData(json: JSON) {
-    //        for (_,subJson):(String, JSON) in json {
-    //            if text.isEmpty {
-    //                text = subJson["hint"].string!
-    //            } else {
-    //                text += "\n\n\(subJson["hint"])"
-    //            }
-    //        }
-    //        print(text)
-    //        //        print("show: \(type(of:text))")
-    //    }
-    //
-    //    // Show text
-    //    func displayText() {
-    //        //        let data = text
-    //        let textGeo = SCNText(string: "placeholder text", extrusionDepth: 1.0)
-    //
-    //        textGeo.firstMaterial?.diffuse.contents = UIColor.black
-    //        textGeo.font = UIFont(name: "Arial", size: 4)
-    //
-    //        let textNode = SCNNode(geometry: textGeo)
-    //        textNode.position = SCNVector3(-0.05,0.15,-0.29)
-    //        textNode.scale = SCNVector3(0.002,0.002,0.002)
-    //
-    //        self.sceneView.scene.rootNode.addChildNode(textNode)
-    //
-    //        //        let action = SCNAction.fadeOpacity(by: -1, duration: 5.0)
-    //        //        textNode.runAction(action)
-    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +79,10 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
         
         // Render text on screen
-        //        displayText()
+        //                displayText()
         
         // Call JSON
-        //        getData(url: API)
+        getData(url: API)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +110,7 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
                 sceneView.session.run(configuration)
                 
                 //MARK: - iOS 11 & lower
-                /*************************************************/
+                /***********************************************/
                 
             } else {
                 //         Fallback on earlier versions
@@ -131,11 +129,12 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
     }
     
     
-    
+    // Render all assets
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         
         let node = SCNNode()
         
+        // Render notepad after reading image
         if let imageAnchor = anchor as? ARImageAnchor {
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
             
@@ -148,12 +147,25 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
             let noteScene = SCNScene(named: "art.scnassets/Note pad final.scn")!
             let noteNode = noteScene.rootNode.childNodes.first!
             noteNode.position = SCNVector3Zero
-            noteNode.position.z = 0.15
+            noteNode.position.z = 0.05
+            
+            node.addChildNode(planeNode)
             
             planeNode.addChildNode(noteNode)
             
+            // Render text
+            let textGeo = SCNText(string: "placeholder text", extrusionDepth: 1.0)
             
-            node.addChildNode(planeNode)
+            textGeo.firstMaterial?.diffuse.contents = UIColor.black
+            textGeo.font = UIFont(name: "Arial", size: 14)
+            
+            let textNode = SCNNode(geometry: textGeo)
+            textNode.scale = SCNVector3(0.002,0.002,0.002)
+            textNode.position = SCNVector3(0.03, 0.03, 0.03)
+            
+            node.addChildNode(textNode)
+            
+            textNode.addChildNode(textNode)
             
         }
         
