@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:QRScavanger/TestViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets">
    </FileRef>
    <FileRef

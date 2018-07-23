@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E75756213B4A3104BBD87F0A /* Pods_QRScavanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */; };
+		5E55D7D862A7988E43B8A071 /* Pods_QRScavanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */; };
 		EC01AC3F2100F93200E82DD6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = EC01AC3E2100F93100E82DD6 /* art.scnassets */; };
 		EC1FB87C20FFABDF00B9ECEA /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCD78C520FFA7E1002748C5 /* Assests.xcassets */; };
 		ECE9D90520FD36E3007DBB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */; };
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75756213B4A3104BBD87F0A /* Pods_QRScavanger.framework in Frameworks */,
+				5E55D7D862A7988E43B8A071 /* Pods_QRScavanger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

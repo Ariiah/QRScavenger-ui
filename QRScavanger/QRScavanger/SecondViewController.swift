@@ -21,10 +21,6 @@ class SecondViewController: UIViewController {
     // Outlets
     @IBOutlet weak var one: BEMCheckBox!
     
-//    @IBOutlet weak var two: BEMCheckBox!
-//
-//    @IBOutlet weak var three: BEMCheckBox!
-    
     @IBOutlet weak var compTextView: UITextView!
     
     // GET JSON data

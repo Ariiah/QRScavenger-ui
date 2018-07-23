@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ESF-1p-F8u" customClass="UITextView">
-                                <rect key="frame" x="51" y="110" width="308" height="462"/>
+                                <rect key="frame" x="51" y="110" width="308" height="508"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-Bh-5fD" customClass="BEMCheckBox">
