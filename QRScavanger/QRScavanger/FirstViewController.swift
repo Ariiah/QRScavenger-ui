@@ -12,62 +12,75 @@ import ARKit
 import Alamofire
 import SwiftyJSON
 
+
+
 class FirstViewController: UIViewController, ARSCNViewDelegate {
     
     // Constants
-//    let API = "https://qr-scavenger.herokuapp.com/"
+    // let API = "https://qr-scavenger.herokuapp.com/"
     
     // AR outlet
     @IBOutlet weak var sceneView: ARSCNView!
     
-//    // GET JSON data
-//    func getData(url: String) {
-//
-//        Alamofire.request(API).responseJSON { response in
-//            if response.result.isSuccess {
-//
-//                let data : JSON = JSON(response.result.value!)
-////                print(data)
-//                //                print("get: \(type(of:data))")
-//                self.showData(json: data)
-//            }
-//        }
-//    }
-//
-//    // Show JSON data
-//    var text = ""
-//    func showData(json: JSON) {
-//        for (_,subJson):(String, JSON) in json {
-//            if text.isEmpty {
-//                text = subJson["hint"].string!
-//            } else {
-//                text += "\n\n\(subJson["hint"])"
-//            }
-//        }
-////                    print(text)
-//        //        print("show: \(type(of:text))")
-//    }
+    // GET JSON data
+    //    func getData(url: String) {
+    //        Alamofire.request(API).responseJSON { response in
+    //            if response.result.isSuccess {
+    //
+    //                let data : JSON = JSON(response.result.value!)
+    //                print("GET \(data)")
+    //                //                print("get: \(type(of:data))")
+    //                self.showData(json: data)
+    //            }
+    //        }
+    //    }
+    //
+    //    // Show JSON data
+    //    var text = ""
+    //    func showData(json: JSON) {
+    //        for (_,subJson):(String, JSON) in json {
+    //            if text.isEmpty {
+    //                text = subJson["hint"].string!
+    //            } else {
+    //                text += "\n\n\(subJson["hint"])"
+    //            }
+    //        }
+    //        print("Show \(text)")
+    //        //        print("show: \(type(of:text))")
+    //    }
     
-    // GET TEXT data
-
+    // Hardcoded Data
+//    
+//    lazy var lumoNode: SCNNode = {
+//        let textGeo = SCNText(string: "This place helps with flight delays", extrusionDepth: 1.0)
+//        textGeo.firstMaterial?.diffuse.contents = UIColor(red: 0.0, green: 5.0, blue: 0.0, alpha: 0.7)
+//        textGeo.font = UIFont(name: "Arial", size: 8)
+//        let textNode = SCNNode(geometry: textGeo)
+//        textNode.scale = SCNVector3(0.002,0.002,0.002)
+//        textNode.position = SCNVector3(-0.03,0.0, 0.06)
+//        
+////        planeNode.addChildNode(textNode)
+//        textNode.eulerAngles.x = -.pi / 2
+//        return textNode
+//    }()
+//    
+//    lazy var bookNode: SCNNode = {
+//        guard let scene = SCNScene(named: "book.scn"),
+//            let node = scene.rootNode.childNode(withName: "book", recursively: false) else { return SCNNode() }
+//        let scaleFactor  = 0.1
+//        node.scale = SCNVector3(scaleFactor, scaleFactor, scaleFactor)
+//        return node
+//    }()
+//    
+//    lazy var mountainNode: SCNNode = {
+//        guard let scene = SCNScene(named: "mountain.scn"),
+//            let node = scene.rootNode.childNode(withName: "mountain", recursively: false) else { return SCNNode() }
+//        let scaleFactor  = 0.25
+//        node.scale = SCNVector3(scaleFactor, scaleFactor, scaleFactor)
+//        node.eulerAngles.x += -.pi / 2
+//        return node
+//    }()
     
-    // Show text
-//            func displayText() {
-//                //        let data = text
-//                let textGeo = SCNText(string: "placeholder text", extrusionDepth: 1.0)
-//
-//                textGeo.firstMaterial?.diffuse.contents = UIColor.black
-//                textGeo.font = UIFont(name: "Arial", size: 4)
-//
-//                let textNode = SCNNode(geometry: textGeo)
-//                textNode.position = SCNVector3(-0.05,0.15,0.29)
-//                textNode.scale = SCNVector3(0.002,0.002,0.002)
-//
-//                self.sceneView.scene.rootNode.addChildNode(textNode)
-//
-//                //        let action = SCNAction.fadeOpacity(by: -1, duration: 5.0)
-//                //        textNode.runAction(action)
-//            }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,36 +94,9 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
         // Set the scene to the view
         sceneView.scene = scene
         
-        // Render text on screen
-//        displayText()
-        
-        
-        // Debug
-//        sceneView.showsStatistics = true
-//        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
-//        sceneView.debugOptions = ARSCNDebugOptions.showWorldOrigin
-
-        
-//        let url = URL(string: "https://qr-scavenger.herokuapp.com/")
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "GET"
-        
-//        _ = URLSession(configuration: request, delegate:nil, delegateQueue: true)
-
-//
-//       var data = NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {(response, data, error) in
-////            return NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
-//            return "HI"
-//        }
-        
-        
-//        let result = data.split(separator: "\n")
-//        print(result)
-
-//        var sep = data.components(separatedBy: "|")
-        
         // Call JSON
-//        getData(url: API)
+        // getData(url: API)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,39 +110,39 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
         if #available(iOS 12.0, *) {
             if ARImageTrackingConfiguration.isSupported {
                 let configuration = ARImageTrackingConfiguration()
-
+                
                 guard let trackedImages =
                     ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: Bundle.main) else {
                         print("No image")
                         return
                 }
-
+                
                 configuration.trackingImages = trackedImages
                 configuration.maximumNumberOfTrackedImages = 1
-
+                
                 // Run the view's session
                 sceneView.session.run(configuration)
-
+                
                 //MARK: - iOS 11.4
                 /***********************************************/
-
+                
             } /*else {
-                _ = ARWorldTrackingConfiguration()
-//                // Load reference images to look for from "AR Resources" folder
-//                guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: nil) else {
-//                    fatalError("Missing expected asset catalog resources.")
-//                }
-//
-//                // Create a session configuration
-//                let configuration = ARWorldTrackingConfiguration()
-//
-//                // Add previously loaded images to ARScene configuration as detectionImages
-//                configuration.detectionImages = referenceImages
-//
-//                // Run the view's session
-//                sceneView.session.run(configuration)
-            }*/
-        
+             _ = ARWorldTrackingConfiguration()
+             //                // Load reference images to look for from "AR Resources" folder
+             //                guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: nil) else {
+             //                    fatalError("Missing expected asset catalog resources.")
+             //                }
+             //
+             //                // Create a session configuration
+             //                let configuration = ARWorldTrackingConfiguration()
+             //
+             //                // Add previously loaded images to ARScene configuration as detectionImages
+             //                configuration.detectionImages = referenceImages
+             //
+             //                // Run the view's session
+             //                sceneView.session.run(configuration)
+             }*/
+            
         }
     }
     
@@ -169,44 +155,67 @@ class FirstViewController: UIViewController, ARSCNViewDelegate {
     }
     
     // Render all assets
-        func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-    
-            let node = SCNNode()
-    
-            // Render plane (parent node)
-            if let imageAnchor = anchor as? ARImageAnchor {
-                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    
-                plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0.8)
-//                plane.firstMaterial?.diffuse.contents = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                
-                let planeNode = SCNNode(geometry: plane)
-                planeNode.eulerAngles.x = -.pi / 2
-                
-    
-                node.addChildNode(planeNode)
-                
-                // Render notepad (child node)
-                let noteScene = SCNScene(named: "art.scnassets/Note pad final.scn")!
-                let noteNode = noteScene.rootNode.childNodes.first!
-                noteNode.position = SCNVector3Zero
-                noteNode.position.z = 0.05
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
 
-                planeNode.addChildNode(noteNode)
+        let node = SCNNode()
 
-                // Render text (child node)
-                let textGeo = SCNText(string: "This place is known for cutting down \n time on your flight delays!", extrusionDepth: 0.5)
-                textGeo.firstMaterial?.diffuse.contents = UIColor.black
-                textGeo.font = UIFont(name: "Arial", size: 4)
+        // Render plane (parent node)
+        if let imageAnchor = anchor as? ARImageAnchor {
+            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
 
-                let textNode = SCNNode(geometry: textGeo)
-                textNode.scale = SCNVector3(0.002,0.002,0.002)
-                textNode.position = SCNVector3(-0.06,0.0395, 0.06)
+            plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0.0)
+            //                plane.firstMaterial?.diffuse.contents = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
-                planeNode.addChildNode(textNode)
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.eulerAngles.x = -.pi / 2
 
-            }
-    
-            return node
+
+            node.addChildNode(planeNode)
+
+            // Render notepad (child node)
+            //                let noteScene = SCNScene(named: "art.scnassets/Note pad final.scn")!
+            //                let noteNode = noteScene.rootNode.childNodes.first!
+            //                noteNode.position = SCNVector3Zero
+            //                noteNode.position.z = 0.05
+            //
+            //                planeNode.addChildNode(noteNode)
+
+            // Render text (child node)
+            let textGeo = SCNText(string: "all the hints", extrusionDepth: 1.0)
+            textGeo.firstMaterial?.diffuse.contents = UIColor(red: 0.0, green: 5.0, blue: 0.0, alpha: 0.7)
+            textGeo.font = UIFont(name: "Arial", size: 8)
+            let textNode = SCNNode(geometry: textGeo)
+            textNode.scale = SCNVector3(0.002,0.002,0.002)
+            textNode.position = SCNVector3(-0.03,0.0, 0.06)
+
+            planeNode.addChildNode(textNode)
+
+        }
+
+        return node
     }
+    
+    
+//    func getPlaneNode(withReferenceImage image: ARReferenceImage) -> SCNNode {
+//        let plane = SCNPlane(width: image.physicalSize.width,
+//                             height: image.physicalSize.height)
+//        let node = SCNNode(geometry: plane)
+//        return node
+//    }
+//
+//    func getNode(withImageName name: String) -> SCNNode {
+//        var node = SCNNode()
+//        switch name {
+//        case "Book":
+//            node = lumoNode
+////        case "Snow Mountain":
+////            node = mountainNode
+////        case "Trees In the Dark":
+////            node = treeNode
+//        default:
+//            break
+//        }
+//        return node
+//    }
+    
 }

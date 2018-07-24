@@ -5,9 +5,6 @@
       location = "group:QRScavanger/TestViewController.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets">
-   </FileRef>
-   <FileRef
       location = "group:QRScavanger.xcodeproj">
    </FileRef>
    <FileRef

@@ -5,6 +5,9 @@
   },
   "resources" : [
     {
+      "filename" : "flightqr-1.arreferenceimage"
+    },
+    {
       "filename" : "shippic.arreferenceimage"
     }
   ]

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E55D7D862A7988E43B8A071 /* Pods_QRScavanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */; };
 		EC01AC3F2100F93200E82DD6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = EC01AC3E2100F93100E82DD6 /* art.scnassets */; };
-		EC1FB87C20FFABDF00B9ECEA /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECCD78C520FFA7E1002748C5 /* Assests.xcassets */; };
+		ECC9BB0221068926004DF1F6 /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC9BB0121068926004DF1F6 /* Assests.xcassets */; };
 		ECE9D90520FD36E3007DBB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */; };
 		ECE9D90720FD36E3007DBB44 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */; };
 		ECE9D90920FD36E3007DBB44 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */; };
@@ -22,8 +22,7 @@
 		98C3321D44852E1E9DC4C92A /* Pods-QRScavanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRScavanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRScavanger/Pods-QRScavanger.release.xcconfig"; sourceTree = "<group>"; };
 		DCDDA9A51C8D8A688EB35991 /* Pods_QRScavanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRScavanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC01AC3E2100F93100E82DD6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		EC01AC402101915500E82DD6 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assests.xcassets; path = "/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets"; sourceTree = "<absolute>"; };
-		ECCD78C520FFA7E1002748C5 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assests.xcassets; path = "/Users/moonsilver13/workspace/capstone/QRScavenger-ui/QRScavanger/QRScavanger/Assests.xcassets"; sourceTree = "<absolute>"; };
+		ECC9BB0121068926004DF1F6 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
 		ECE9D90120FD36E3007DBB44 /* QRScavanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScavanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +82,8 @@
 		ECE9D90320FD36E3007DBB44 /* QRScavanger */ = {
 			isa = PBXGroup;
 			children = (
-				EC01AC402101915500E82DD6 /* Assests.xcassets */,
+				ECC9BB0121068926004DF1F6 /* Assests.xcassets */,
 				EC01AC3E2100F93100E82DD6 /* art.scnassets */,
-				ECCD78C520FFA7E1002748C5 /* Assests.xcassets */,
 				ECE9D90420FD36E3007DBB44 /* AppDelegate.swift */,
 				ECE9D90620FD36E3007DBB44 /* FirstViewController.swift */,
 				ECE9D90820FD36E3007DBB44 /* SecondViewController.swift */,
@@ -158,8 +156,8 @@
 			files = (
 				ECE9D91120FD36E6007DBB44 /* LaunchScreen.storyboard in Resources */,
 				EC01AC3F2100F93200E82DD6 /* art.scnassets in Resources */,
+				ECC9BB0221068926004DF1F6 /* Assests.xcassets in Resources */,
 				ECE9D90C20FD36E3007DBB44 /* Main.storyboard in Resources */,
-				EC1FB87C20FFABDF00B9ECEA /* Assests.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
